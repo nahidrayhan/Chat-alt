@@ -1,31 +1,25 @@
-# Hostinger import fix
+# HoorStyle Hostinger Import Fix
 
-This repository is intentionally structured with a simple Express-compatible Node wrapper at the root so Hostinger can detect/import it.
+This repo root intentionally looks like a standard Vite + React app so Hostinger's Git importer can detect it.
 
-Root files Hostinger should see:
-- package.json
-- index.js
-- app/
+The real HoorStyle website is inside `/app`.
 
-The real HoorStyle TanStack Start app is inside `/app`.
+Use these Hostinger settings after the repo is accepted:
 
-Use Hostinger settings:
-- Framework: Express.js / Other / Node.js
+- Framework: Vite / React / Other
 - Node version: 22
-- Root directory: leave empty or `/`
+- Root directory: leave empty
 - Build command: `npm run build`
 - Start command: `npm run start`
 - Entry file: `index.js`
-- Output directory: leave empty or use `app/.output` if Hostinger asks
+- Output directory: `app/.output`
 
-Add environment variables in Hostinger, not GitHub:
-- NODE_ENV=production
-- NITRO_PRESET=node-server
-- SUPABASE_URL=...
-- SUPABASE_PUBLISHABLE_KEY=...
-- SUPABASE_SERVICE_ROLE_KEY=...
-- VITE_SUPABASE_URL=...
-- VITE_SUPABASE_PUBLISHABLE_KEY=...
-- VITE_SUPABASE_PROJECT_ID=...
+Root `npm run build` runs:
 
-Do not upload the ZIP itself to GitHub. Unzip and upload the inside files so GitHub root shows package.json, index.js, and app/.
+```bash
+cd app && npm install && npm run build
+```
+
+Root `npm run start` starts the built TanStack/Nitro server through `index.js`.
+
+Add Supabase variables only in Hostinger, not GitHub.
