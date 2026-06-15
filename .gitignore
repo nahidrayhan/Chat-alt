@@ -1,9 +1,7 @@
 node_modules/
 app/node_modules/
-.output/
 app/.output/
-dist/
-app/dist/
 .env
-app/.env
+.env.*
+!.env.hostinger.example
 .DS_Store

@@ -1,12 +1,12 @@
 {
-  "name": "hoorstyle-hostinger-vite-react-wrapper",
+  "name": "hoorstyle-vite-react-hostinger",
   "version": "1.0.0",
   "private": false,
   "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
-    "build": "cd app && npm install && npm run build",
+    "build": "node scripts/prepare-real-app.mjs && npm --prefix app install && npm --prefix app run build",
     "start": "node index.js",
     "preview": "npm run start"
   },
@@ -23,5 +23,5 @@
     "node": "22.x",
     "npm": ">=10"
   },
-  "description": "Vite/React detectable wrapper for Hostinger. Real HoorStyle app lives in /app and is built by npm run build."
+  "description": "Hostinger-detectable Vite/React wrapper. The real HoorStyle TanStack app is extracted during build."
 }
