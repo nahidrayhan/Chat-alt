@@ -1,5 +1,5 @@
 {
-  "name": "hoorstyle-hostinger",
+  "name": "hoorstyle-hostinger-git-ready",
   "private": true,
   "sideEffects": [
     "**/*.css",
@@ -11,12 +11,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "NITRO_PRESET=node-server vite build",
-    "build:hostinger": "NITRO_PRESET=node-server vite build",
+    "build": "vite build",
+    "build:hostinger": "vite build",
     "build:dev": "vite build --mode development",
-    "start": "node .output/server/index.mjs",
-    "start:hostinger": "node .output/server/index.mjs",
-    "preview": "vite preview",
+    "start": "node server.js",
+    "start:hostinger": "node server.js",
+    "preview": "node server.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "check:hostinger": "node scripts/hostinger-check.mjs"
@@ -86,7 +86,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@lovable.dev/vite-tanstack-config": "2.4.0",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
@@ -106,5 +105,6 @@
   "engines": {
     "node": "22.x",
     "npm": ">=10"
-  }
+  },
+  "main": "server.js"
 }
